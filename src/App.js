@@ -11,8 +11,7 @@ function App () {
   
     return (
     <Router>
-      <div className="App">
-        
+      <div className="App"> 
         <Route  path='/' exact component={ParkList}/>
         <Route path="/:id"  component={ParkDetail} />     
       </div>

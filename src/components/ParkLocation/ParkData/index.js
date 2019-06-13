@@ -8,13 +8,16 @@ import './styles.css';
 
 const ParkData = ({address, hours, picture, info}) =>(
 
+    
     <div className="parkDataCont">
+        
         <ParkPicture 
         picture={picture}
         />
         
         <ParkInfo 
-            summary={info}        />
+            summary={info}        
+        />
 
         <ParkHours 
             hours={hours}    
