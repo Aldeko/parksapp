@@ -16,6 +16,7 @@ import {api_rest} from './../../constants/api_url';
         items:[{localitzacio:{}, imatge_principal:{},municipis:[],bloc_auxiliars:[{}]}],
     });
     const [isLoading, setIsLoading]=useState(true);
+    const [show, setShow]=useState(true)
    
     
 
@@ -25,7 +26,7 @@ import {api_rest} from './../../constants/api_url';
         setIsLoading(true);
         const item=await fetchItem.json();
         setItem(item);
-      
+        (item.items[0].bloc_auxiliars[2]===true)? setShow(true):setShow(false)
         setIsLoading(false);
         console.log(item);    
     }
@@ -35,7 +36,7 @@ import {api_rest} from './../../constants/api_url';
            <h1>CARGANDO</h1>
            <CircularProgress size={60}/>
         </div>
-       
+       if (show===false) return (item.items[0].bloc_auxiliars[2])=null
        
 
     return (
