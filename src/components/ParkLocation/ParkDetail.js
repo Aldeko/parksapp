@@ -16,7 +16,7 @@ import {api_rest} from './../../constants/api_url';
         items:[{localitzacio:{}, imatge_principal:{},municipis:[],bloc_auxiliars:[{}]}],
     });
     const [isLoading, setIsLoading]=useState(true);
-    const [show, setShow]=useState(true)
+    const [openningHours, setOpenningHours]=useState(null)
    
     
 
@@ -26,9 +26,16 @@ import {api_rest} from './../../constants/api_url';
         setIsLoading(true);
         const item=await fetchItem.json();
         setItem(item);
-        (item.items[0].bloc_auxiliars[2]===true)? setShow(true):setShow(false)
         setIsLoading(false);
-        console.log(item);    
+
+        const blocAuxiliar= item.items[0].bloc_auxiliars.find((value)=>{
+            return value ? value.etiqueta ==="Horari" :false;
+        })
+        if(blocAuxiliar){
+            setOpenningHours(blocAuxiliar.valor)
+        }
+        console.log(item);  
+        
     }
 
        
@@ -36,7 +43,7 @@ import {api_rest} from './../../constants/api_url';
            <h1>CARGANDO</h1>
            <CircularProgress size={60}/>
         </div>
-       if (show===false) return (item.items[0].bloc_auxiliars[2])=null
+       
        
 
     return (
@@ -48,7 +55,7 @@ import {api_rest} from './../../constants/api_url';
             info={item.items[0].entradeta}
             address={item.items[0].localitzacio.localitzacio_adreca}
             picture={item.items[0].imatge_principal.imatge_principal_fitxer}
-            hours={item.items[0].bloc_auxiliars[2].valor} 
+            hours={openningHours} 
             />
             
         </div> 
