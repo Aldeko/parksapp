@@ -34,8 +34,7 @@ import {api_rest} from './../../constants/api_url';
         if(blocAuxiliar){
             setOpenningHours(blocAuxiliar.valor)
         }
-        console.log(item);  
-        
+        //console.log(item);     
     }
 
        
