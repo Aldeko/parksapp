@@ -3,6 +3,9 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Location from './Location';
 import ParkData from './ParkData/index';
 import {api_rest} from './../../constants/api_url';
+import Container from './../Styled-components/Container';
+import LocationStyle from './../Styled-components/LocationStyle';
+
 
 
  function ParkDetail({match}){
@@ -15,7 +18,7 @@ import {api_rest} from './../../constants/api_url';
     const [item, setItem] = useState({
         items:[{localitzacio:{}, imatge_principal:{},municipis:[],bloc_auxiliars:[{}]}],
     });
-    const [isLoading, setIsLoading]=useState(true);
+    const [isLoading, setIsLoading]=useState(false);
     const [openningHours, setOpenningHours]=useState(null)
    
     
@@ -46,18 +49,20 @@ import {api_rest} from './../../constants/api_url';
        
 
     return (
-        <div>
-            <Location park={item.items[0].titol} city={item.items[0].municipis}/>
-       
-            <ParkData 
-            
-            info={item.items[0].entradeta}
-            address={item.items[0].localitzacio.localitzacio_adreca}
-            picture={item.items[0].imatge_principal.imatge_principal_fitxer}
-            hours={openningHours} 
-            />
-            
-        </div> 
+           
+        <Container>
+            <LocationStyle>
+                <Location park={item.items[0].titol} city={item.items[0].municipis}/>
+            </LocationStyle>
+          
+                <ParkData 
+                info={item.items[0].entradeta}
+                address={item.items[0].localitzacio.localitzacio_adreca}
+                picture={item.items[0].imatge_principal.imatge_principal_fitxer}
+                hours={openningHours} 
+                />
+        </Container>
+        
     )
     
 }

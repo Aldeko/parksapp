@@ -1,14 +1,7 @@
-.parkDataCont{
-    
-    max-width: 1500px;
-    margin: auto;
-    padding:30px;
-    background-color: rgb(228, 220, 220);
-   
-}
+
 
 .parkInfoCont {
-    background-color: blueviolet;
+    
   
 }
 
@@ -19,15 +12,16 @@
 }
 
 .parkAddressCont{
-    background-color: rgb(183, 43, 226);
-
+    
 }
 
 .parkHoursCont{
-    background-color: rgb(43, 70, 226);
+   
 
 }
 
-.parkPictureCont{
-
+.responsive{
+    width: 100%;
+   
+    height: auto;
 }

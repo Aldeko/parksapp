@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {api_park_list} from './../constants/api_url';
 import {Link} from 'react-router-dom';
 
+
 const ParkList = () =>{
     useEffect (() => {
         fetchItems();
@@ -19,7 +20,7 @@ const ParkList = () =>{
     
     return(
     
-       <div>
+       <div className="list">
             {items.map(item => (
                 <h2 key={item.articleId}>
                     <Link to={`/${item.articleId}`}>

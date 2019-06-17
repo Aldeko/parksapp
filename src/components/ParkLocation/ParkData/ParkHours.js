@@ -4,7 +4,7 @@ import './styles.css';
 const ParkHours = ({hours}) =>{
     if (hours) {
     return (
-    <div className="parkHoursCont">
+    <div>
         <h1>Horari</h1>
         <p>{hours}</p>
     </div>
