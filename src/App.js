@@ -7,8 +7,7 @@ import ParkDetail from './components/ParkLocation/ParkDetail';
 
 
 function App () {
-  
-  
+    
     return (
     <Router>
       <div className="App"> 

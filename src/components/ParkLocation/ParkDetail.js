@@ -8,6 +8,7 @@ import LocationStyle from './../Styled-components/LocationStyle';
 
 
 
+
  function ParkDetail({match}){
     useEffect( () => {
         fetchItem();

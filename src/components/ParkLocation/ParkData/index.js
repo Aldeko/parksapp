@@ -7,18 +7,20 @@ import ParkInfo from './ParkInfo';
 import './styles.css';
 import HoursStyle from './../../Styled-components/HoursStyle';
 
-
 const ParkData = ({address, hours, picture, info}) =>(
 
     <div>
+
+       
         
         <ParkPicture 
         picture={picture}
-        />
-
+        />  
         <ParkInfo 
             summary={info}        
         />
+        <hr />
+
         <HoursStyle>
             <ParkHours 
             hours={hours}    
